@@ -1,0 +1,32 @@
+[user]
+	email = john.h.wilshire@gmail.com
+	name = John Wilshire
+
+[core]
+    excludesfile = /home/john/.gitignore_global
+    editor = nano
+    autocrlf = input
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+    ui = auto
+[alias]
+    dfc = diff --color-words
+    dfcc = diff --color-words --cached    
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    topo = log --graph --simplify-by-decoration --pretty=format:'%d' --all
+    ff = merge --ff-only
+    ffom = merge --ff-only origin/master
+    rom = rebase origin/master
+    rh = reset HEAD
+    undo-commit = reset --soft HEAD^
+    root = rev-parse --show-toplevel
+    sha = rev-parse --short HEAD
+    edit = !subl $(git status --short | awk '$1 ~ /^M|A|U/ {print $2}' )
+[log]
+    date = iso
+[push]
+    default = simple
